@@ -7,7 +7,7 @@ const bestsellersCss = `
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .bs-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
   }
   @media (max-width: 520px) {
@@ -130,7 +130,7 @@ export default function Home() {
 
         <style dangerouslySetInnerHTML={{ __html: bestsellersCss }} />
         <div className="bs-grid">
-          {bestsellers.slice(0, 3).map(product => (
+          {bestsellers.slice(0, 6).map(product => (
             <a
               key={product.id}
               href="https://cabellototal.es/collections/all"
