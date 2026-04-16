@@ -2,6 +2,16 @@ import { products, getProductBySlug } from '@/data/products';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+const pageCss = `
+  .pdp-wrap { padding: 48px 24px; }
+  .pdp-breadcrumb { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 40px; font-size: 0.82rem; color: #888; }
+  .pdp-howto { background: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 8px; padding: 36px; margin-bottom: 60px; }
+  @media (max-width: 600px) {
+    .pdp-wrap { padding: 28px 16px; }
+    .pdp-howto { padding: 20px 18px; }
+  }
+`;
+
 export function generateStaticParams() {
   return products.map(p => ({ slug: p.slug }));
 }
@@ -27,9 +37,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <div style={{ background: '#ffffff', minHeight: '60vh' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
+      <style dangerouslySetInnerHTML={{ __html: pageCss }} />
+      <div className="pdp-wrap" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Breadcrumb */}
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '40px', fontSize: '0.82rem', color: '#888' }}>
+        <div className="pdp-breadcrumb">
           <Link href="/" style={{ color: '#888', textDecoration: 'none' }}>Inicio</Link>
           <span>›</span>
           <Link href="/productos" style={{ color: '#888', textDecoration: 'none' }}>Productos</Link>
@@ -132,13 +143,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
 
         {/* How to use */}
-        <div style={{
-          background: '#f8f8f8',
-          border: '1px solid #e5e5e5',
-          borderRadius: '8px',
-          padding: '36px',
-          marginBottom: '60px',
-        }}>
+        <div className="pdp-howto">
           <h2 style={{ color: '#111', fontWeight: 800, fontSize: '1.1rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '16px' }}>
             Cómo Usar
           </h2>

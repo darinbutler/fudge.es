@@ -18,6 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 const gridCss = `
+  .cat-wrap { padding: 48px 32px; }
+  @media (max-width: 600px) {
+    .cat-wrap { padding: 28px 16px; }
+  }
   .cat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -59,7 +63,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   return (
     <div style={{ background: '#ffffff', minHeight: '60vh' }}>
       <style dangerouslySetInnerHTML={{ __html: gridCss }} />
-      <div style={{ maxWidth: '1340px', margin: '0 auto', padding: '48px 32px' }}>
+      <div className="cat-wrap" style={{ maxWidth: '1340px', margin: '0 auto' }}>
         {/* Breadcrumb */}
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '36px', fontSize: '0.82rem', color: '#888' }}>
           <Link href="/" style={{ color: '#888', textDecoration: 'none' }}>Inicio</Link>

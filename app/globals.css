@@ -110,3 +110,38 @@ ul, ol {
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   transform: translateY(-2px);
 }
+
+/* ── Mobile page padding ── */
+@media (max-width: 600px) {
+  /* Reduce outer section padding on mobile */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  /* Page content containers */
+  .page-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  /* Announcement bar — smaller text */
+  .announce-bar {
+    font-size: 0.72rem !important;
+    padding: 8px 12px !important;
+  }
+  /* Breadcrumb — allow wrapping */
+  .breadcrumb {
+    flex-wrap: wrap !important;
+  }
+  /* Hero buttons — stack on very small screens */
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .hero-buttons a {
+    text-align: center;
+  }
+  /* Footer margin */
+  footer {
+    margin-top: 48px !important;
+  }
+}

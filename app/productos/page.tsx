@@ -7,6 +7,10 @@ export const metadata = {
 };
 
 const gridCss = `
+  .pg-wrap { padding: 52px 32px; }
+  @media (max-width: 600px) {
+    .pg-wrap { padding: 32px 16px; }
+  }
   .pg-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -43,7 +47,8 @@ const gridCss = `
   .pg-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 12px;
     transition: transform 0.4s ease;
   }
   .pg-card:hover .pg-img img {
@@ -55,7 +60,7 @@ export default function ProductsPage() {
   return (
     <div style={{ background: '#ffffff', minHeight: '60vh' }}>
       <style dangerouslySetInnerHTML={{ __html: gridCss }} />
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '52px 32px' }}>
+      <div className="pg-wrap" style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
         {/* Header */}
         <div style={{ marginBottom: '40px' }}>

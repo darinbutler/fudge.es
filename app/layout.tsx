@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import NavBar from "./components/NavBar";
 
 export const metadata: Metadata = {
   title: "Fudge Professional España | Productos Profesionales de Peluquería",
@@ -40,68 +41,7 @@ export default function RootLayout({
           Distribuidor oficial España: <a href="https://cabellototal.es/collections/all" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none', fontWeight: 700 }}>cabellototal.es</a> &nbsp;·&nbsp; Envío gratis +€50
         </div>
 
-        {/* NAV */}
-        <nav style={{
-          background: '#ffffff',
-          borderBottom: '1px solid #e5e5e5',
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-        }}>
-          <div style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            padding: '0 24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: '70px',
-          }}>
-            {/* Logo — SVG wordmark matching UK site */}
-            <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-              <img
-                src="/fudge-logo.svg"
-                alt="Fudge Professional"
-                width="200"
-                height="45"
-                style={{ display: 'block', height: '45px', width: 'auto' }}
-              />
-            </Link>
-
-            {/* Nav links */}
-            <div style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
-              <Link href="/productos" style={{ color: '#333', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.01em' }}>
-                Productos
-              </Link>
-              <Link href="/categoria/styling" style={{ color: '#333', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}>
-                Styling
-              </Link>
-              <Link href="/categoria/shampoo-acondicionador" style={{ color: '#333', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}>
-                Champú
-              </Link>
-              <Link href="/categoria/tratamiento" style={{ color: '#333', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}>
-                Tratamientos
-              </Link>
-              <a
-                href="https://cabellototal.es/collections/all"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  background: '#FF6B00',
-                  color: '#fff',
-                  padding: '9px 20px',
-                  borderRadius: '3px',
-                  textDecoration: 'none',
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.03em',
-                }}
-              >
-                Comprar
-              </a>
-            </div>
-          </div>
-        </nav>
+        <NavBar />
 
         <main>{children}</main>
 

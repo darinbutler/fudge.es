@@ -68,7 +68,7 @@ export default function Home() {
           }}>
             Productos de peluquería profesional de culto — utilizados por los mejores estilistas del mundo. Ahora disponibles en España a través de nuestro distribuidor oficial.
           </p>
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' as const }}>
+          <div className="hero-buttons" style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' as const }}>
             <Link
               href="/productos"
               style={{
