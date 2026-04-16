@@ -37,7 +37,7 @@ export default function RootLayout({
           fontWeight: 500,
           letterSpacing: '0.04em',
         }}>
-          Distribuidor oficial España: <a href="https://www.cabellototal.es" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none', fontWeight: 700 }}>cabellototal.es</a> &nbsp;·&nbsp; Envío gratis +€50
+          Distribuidor oficial España: <a href="https://cabellototal.es/collections/all" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none', fontWeight: 700 }}>cabellototal.es</a> &nbsp;·&nbsp; Envío gratis +€50
         </div>
 
         {/* NAV */}
@@ -83,7 +83,7 @@ export default function RootLayout({
                 Tratamientos
               </Link>
               <a
-                href="https://www.cabellototal.es"
+                href="https://cabellototal.es/collections/all"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -133,7 +133,7 @@ export default function RootLayout({
                   Productos profesionales de peluquería de máxima calidad. Desde 1991, la marca de referencia de los mejores estilistas.
                 </p>
                 <div style={{ color: '#555', fontSize: '0.75rem', marginBottom: '4px' }}>Distribuidor oficial España</div>
-                <a href="https://www.cabellototal.es" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 700 }}>
+                <a href="https://cabellototal.es/collections/all" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 700 }}>
                   cabellototal.es →
                 </a>
               </div>
@@ -173,7 +173,7 @@ export default function RootLayout({
               gap: '12px',
             }}>
               <p style={{ color: '#555', fontSize: '0.8rem' }}>© 2025 Fudge Professional. Todos los derechos reservados.</p>
-              <p style={{ color: '#555', fontSize: '0.8rem' }}>Distribuidor oficial España: <a href="https://www.cabellototal.es" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none' }}>cabellototal.es</a></p>
+              <p style={{ color: '#555', fontSize: '0.8rem' }}>Distribuidor oficial España: <a href="https://cabellototal.es/collections/all" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none' }}>cabellototal.es</a></p>
             </div>
           </div>
         </footer>

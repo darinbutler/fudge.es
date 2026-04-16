@@ -94,7 +94,7 @@ export default function ProductsPage() {
           {products.map(product => (
             <a
               key={product.id}
-              href="https://www.cabellototal.es"
+              href="https://cabellototal.es/collections/all"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: 'none', display: 'block', height: '100%' }}

@@ -91,7 +91,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             {/* CTA */}
             <a
-              href="https://www.cabellototal.es"
+              href="https://cabellototal.es/collections/all"
               target="_blank"
               rel="noopener noreferrer"
               style={{

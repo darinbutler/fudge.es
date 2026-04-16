@@ -78,7 +78,7 @@ export default function Home() {
               Ver Todos los Productos
             </Link>
             <a
-              href="https://www.cabellototal.es"
+              href="https://cabellototal.es/collections/all"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -133,7 +133,7 @@ export default function Home() {
           {bestsellers.slice(0, 3).map(product => (
             <a
               key={product.id}
-              href="https://www.cabellototal.es"
+              href="https://cabellototal.es/collections/all"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: 'none', display: 'block' }}
@@ -289,7 +289,7 @@ export default function Home() {
             Compra todos los productos Fudge Professional en nuestro distribuidor oficial en España — envío rápido a todo el país.
           </p>
           <a
-            href="https://www.cabellototal.es"
+            href="https://cabellototal.es/collections/all"
             target="_blank"
             rel="noopener noreferrer"
             style={{
