@@ -142,15 +142,13 @@ export default function Home() {
         </div>
         <p style={{ color: '#666', marginBottom: '36px', fontSize: '0.95rem' }}>Los favoritos de los peluqueros profesionales</p>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-          gap: '20px',
-        }}>
+        <div className="bestsellers-grid">
           {bestsellers.map(product => (
-            <Link
+            <a
               key={product.id}
-              href={`/productos/${product.slug}`}
+              href="https://www.cabellototal.es"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ textDecoration: 'none', display: 'block' }}
             >
               <div style={{
@@ -201,19 +199,19 @@ export default function Home() {
                       <span style={{ color: '#555', fontSize: '0.75rem', marginLeft: '6px' }}>{product.size}</span>
                     </div>
                     <span style={{
-                      background: 'rgba(255,107,0,0.12)',
-                      color: '#FF6B00',
+                      background: '#FF6B00',
+                      color: '#fff',
                       padding: '6px 12px',
                       borderRadius: '3px',
                       fontSize: '0.75rem',
                       fontWeight: 700,
                     }}>
-                      Ver más
+                      Comprar
                     </span>
                   </div>
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </section>

@@ -25,7 +25,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const catProducts = getProductsByCategory(slug as Category);
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
+    <div style={{ maxWidth: '1340px', margin: '0 auto', padding: '48px 32px' }}>
       {/* Breadcrumb */}
       <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '36px', fontSize: '0.82rem', color: '#555' }}>
         <Link href="/" style={{ color: '#555', textDecoration: 'none' }}>Inicio</Link>
@@ -36,7 +36,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       </div>
 
       {/* Header */}
-      <div style={{ marginBottom: '48px' }}>
+      <div style={{ marginBottom: '40px' }}>
         <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>{cat.icon}</div>
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 900, letterSpacing: '-0.03em', color: '#fff', marginBottom: '12px' }}>
           {cat.label}
@@ -68,28 +68,19 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
         ))}
       </div>
 
-      {/* Products grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-        gap: '20px',
-      }}>
+      {/* Products grid — 4 columns desktop, responsive */}
+      <div className="products-grid">
         {catProducts.map(product => (
-          <Link
+          <a
             key={product.id}
-            href={`/productos/${product.slug}`}
-            style={{ textDecoration: 'none', display: 'block' }}
+            href="https://www.cabellototal.es"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', display: 'block', height: '100%' }}
           >
-            <div style={{
-              background: '#141414',
-              border: '1px solid rgba(255,255,255,0.07)',
-              borderRadius: '8px',
-              overflow: 'hidden',
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-            }}>
-              <div style={{ position: 'relative', height: '220px', overflow: 'hidden', background: '#1a1a1a', flexShrink: 0 }}>
+            <div className="product-card">
+              {/* Image */}
+              <div style={{ position: 'relative', height: '200px', overflow: 'hidden', background: '#1a1a1a', flexShrink: 0 }}>
                 <img
                   src={product.image}
                   alt={product.nameEs}
@@ -97,30 +88,34 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                 />
                 <div style={{
                   position: 'absolute', inset: 0,
-                  background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.5) 100%)',
+                  background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.55) 100%)',
                 }} />
                 {product.badge && (
                   <div style={{
-                    position: 'absolute', top: '12px', left: '12px',
+                    position: 'absolute', top: '10px', left: '10px',
                     background: '#FF6B00', color: '#fff',
-                    padding: '4px 10px', borderRadius: '3px',
-                    fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase',
+                    padding: '3px 9px', borderRadius: '3px',
+                    fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase',
                   }}>
                     {product.badge}
                   </div>
                 )}
               </div>
-              <div style={{ padding: '16px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.95rem', marginBottom: '8px', lineHeight: 1.3, flex: 1 }}>
+              {/* Info */}
+              <div style={{ padding: '14px 16px 16px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ color: '#FF6B00', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '5px' }}>
+                  {product.categoryLabel}
+                </div>
+                <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.9rem', marginBottom: '6px', lineHeight: 1.3, flex: 1 }}>
                   {product.nameEs}
                 </div>
-                <div style={{ color: '#777', fontSize: '0.82rem', lineHeight: 1.5, marginBottom: '14px' }}>
+                <div style={{ color: '#777', fontSize: '0.78rem', lineHeight: 1.5, marginBottom: '12px' }}>
                   {product.description}
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
                   <div>
-                    <span style={{ color: '#fff', fontWeight: 800, fontSize: '1.05rem' }}>€{product.price.toFixed(2)}</span>
-                    <span style={{ color: '#555', fontSize: '0.75rem', marginLeft: '6px' }}>{product.size}</span>
+                    <span style={{ color: '#fff', fontWeight: 800, fontSize: '1rem' }}>€{product.price.toFixed(2)}</span>
+                    <span style={{ color: '#555', fontSize: '0.72rem', marginLeft: '5px' }}>{product.size}</span>
                   </div>
                   <a
                     href="https://www.cabellototal.es"
@@ -128,8 +123,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                     rel="noopener noreferrer"
                     style={{
                       background: '#FF6B00', color: '#fff',
-                      padding: '7px 14px', borderRadius: '3px',
-                      fontSize: '0.75rem', fontWeight: 700, textDecoration: 'none',
+                      padding: '6px 12px', borderRadius: '3px',
+                      fontSize: '0.72rem', fontWeight: 700, textDecoration: 'none',
+                      whiteSpace: 'nowrap', flexShrink: 0,
                     }}
                   >
                     Comprar
@@ -137,7 +133,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
     </div>
