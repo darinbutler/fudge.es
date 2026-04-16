@@ -1,6 +1,20 @@
 import Link from 'next/link';
 import { bestsellers, categories, products } from '@/data/products';
 
+const bestsellersCss = `
+  .bs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 900px) {
+    .bs-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  }
+  @media (max-width: 520px) {
+    .bs-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+`;
+
 export default function Home() {
   return (
     <>
@@ -114,7 +128,8 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="bestsellers-grid">
+        <style dangerouslySetInnerHTML={{ __html: bestsellersCss }} />
+        <div className="bs-grid">
           {bestsellers.slice(0, 3).map(product => (
             <a
               key={product.id}
