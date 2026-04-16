@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Fudge Professional España | Productos Profesionales de Peluquería",
   description: "Descubre la gama completa de productos profesionales Fudge para estilismo, cuidado y color del cabello. Compra en cabellototal.es.",
   keywords: "fudge professional, productos peluquería, styling cabello, champú profesional, España",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -16,17 +26,18 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body style={{ background: '#ffffff', color: '#111111', minHeight: '100vh', margin: 0 }}>
+
         {/* ANNOUNCEMENT BAR */}
         <div style={{
-          background: '#FF6B00',
+          background: '#111111',
           color: '#fff',
           textAlign: 'center',
           padding: '10px 24px',
-          fontSize: '0.82rem',
-          fontWeight: 600,
-          letterSpacing: '0.02em',
+          fontSize: '0.8rem',
+          fontWeight: 500,
+          letterSpacing: '0.04em',
         }}>
-          🇪🇸 Envío gratis en pedidos superiores a €50 · Distribuidor oficial España: cabellototal.es
+          Distribuidor oficial España: <a href="https://www.cabellototal.es" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none', fontWeight: 700 }}>cabellototal.es</a> &nbsp;·&nbsp; Envío gratis +€50
         </div>
 
         {/* NAV */}
@@ -44,26 +55,23 @@ export default function RootLayout({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            height: '64px',
+            height: '70px',
           }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-              <span style={{ fontSize: '1.6rem', fontWeight: 900, letterSpacing: '-0.03em', color: '#111' }}>
-                fudge<span style={{ color: '#FF6B00' }}>.</span>
-              </span>
-              <span style={{
-                fontSize: '0.6rem',
-                fontWeight: 700,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase' as const,
-                color: '#FF6B00',
-                marginTop: '2px',
-              }}>
-                PROFESSIONAL
-              </span>
+            {/* Logo — SVG wordmark matching UK site */}
+            <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+              <img
+                src="/fudge-logo.svg"
+                alt="Fudge Professional"
+                width="200"
+                height="45"
+                style={{ display: 'block', height: '45px', width: 'auto' }}
+              />
             </Link>
+
+            {/* Nav links */}
             <div style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
-              <Link href="/productos" style={{ color: '#333', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}>
-                Todos los Productos
+              <Link href="/productos" style={{ color: '#333', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.01em' }}>
+                Productos
               </Link>
               <Link href="/categoria/styling" style={{ color: '#333', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}>
                 Styling
@@ -86,10 +94,10 @@ export default function RootLayout({
                   textDecoration: 'none',
                   fontSize: '0.85rem',
                   fontWeight: 700,
-                  letterSpacing: '0.02em',
+                  letterSpacing: '0.03em',
                 }}
               >
-                Comprar Ahora
+                Comprar
               </a>
             </div>
           </div>
@@ -104,6 +112,16 @@ export default function RootLayout({
           padding: '60px 24px 40px',
         }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            {/* Footer logo */}
+            <div style={{ marginBottom: '40px', paddingBottom: '36px', borderBottom: '1px solid #222' }}>
+              <img
+                src="/fudge-logo.svg"
+                alt="Fudge Professional"
+                width="180"
+                height="40"
+                style={{ height: '40px', width: 'auto', filter: 'invert(1)', opacity: 0.9 }}
+              />
+            </div>
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -111,14 +129,10 @@ export default function RootLayout({
               marginBottom: '48px',
             }}>
               <div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 900, letterSpacing: '-0.03em', marginBottom: '16px', color: '#fff' }}>
-                  fudge<span style={{ color: '#FF6B00' }}>.</span>
-                  <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' as const, color: '#FF6B00', marginLeft: '6px' }}>PROFESSIONAL</span>
-                </div>
                 <p style={{ color: '#888', fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '16px' }}>
                   Productos profesionales de peluquería de máxima calidad. Desde 1991, la marca de referencia de los mejores estilistas.
                 </p>
-                <div style={{ color: '#555', fontSize: '0.75rem' }}>Distribuidor oficial España</div>
+                <div style={{ color: '#555', fontSize: '0.75rem', marginBottom: '4px' }}>Distribuidor oficial España</div>
                 <a href="https://www.cabellototal.es" target="_blank" rel="noopener noreferrer" style={{ color: '#FF6B00', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 700 }}>
                   cabellototal.es →
                 </a>
@@ -144,12 +158,7 @@ export default function RootLayout({
                 <p style={{ color: '#888', fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '16px' }}>
                   Fundada en el Reino Unido en 1991, Fudge Professional es la marca de peluquería de culto presente en salones de vanguardia de todo el mundo.
                 </p>
-                <a
-                  href="https://uk.fudgeprofessional.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#555', textDecoration: 'none', fontSize: '0.82rem' }}
-                >
+                <a href="https://uk.fudgeprofessional.com" target="_blank" rel="noopener noreferrer" style={{ color: '#555', textDecoration: 'none', fontSize: '0.82rem' }}>
                   uk.fudgeprofessional.com ↗
                 </a>
               </div>

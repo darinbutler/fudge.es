@@ -115,7 +115,7 @@ export default function Home() {
         </div>
 
         <div className="bestsellers-grid">
-          {bestsellers.map(product => (
+          {bestsellers.slice(0, 3).map(product => (
             <a
               key={product.id}
               href="https://www.cabellototal.es"
@@ -125,7 +125,7 @@ export default function Home() {
             >
               <div className="product-card">
                 {/* Product image area — light grey bg like UK site */}
-                <div style={{ position: 'relative', height: '240px', overflow: 'hidden', background: '#f7f7f7' }}>
+                <div style={{ position: 'relative', height: '280px', overflow: 'hidden', background: '#f7f7f7' }}>
                   <img
                     src={product.image}
                     alt={product.nameEs}
