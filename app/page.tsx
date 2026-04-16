@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import { bestsellers, categories, products } from '@/data/products';
 
+const categoryImages: Record<string, string> = {
+  'styling': 'https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+  'shampoo-acondicionador': 'https://images.pexels.com/photos/23349900/pexels-photo-23349900.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+  'tratamiento': 'https://images.pexels.com/photos/3993454/pexels-photo-3993454.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+  'color': 'https://images.pexels.com/photos/3065170/pexels-photo-3065170.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+};
+
 const bestsellersCss = `
   .bs-grid {
     display: grid;
@@ -252,16 +259,23 @@ export default function Home() {
                     background: '#ffffff',
                     border: '1px solid #e5e5e5',
                     borderRadius: '6px',
-                    padding: '28px 24px',
+                    overflow: 'hidden',
                     textDecoration: 'none',
                     display: 'block',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
                   }}
                 >
-                  <div style={{ fontSize: '2rem', marginBottom: '12px' }}>{cat.icon}</div>
-                  <div style={{ color: '#111111', fontWeight: 700, fontSize: '1rem', marginBottom: '6px' }}>{cat.label}</div>
-                  <div style={{ color: '#777', fontSize: '0.82rem', lineHeight: 1.5, marginBottom: '12px' }}>{cat.description}</div>
-                  <div style={{ color: '#FF6B00', fontSize: '0.8rem', fontWeight: 600 }}>{count} productos →</div>
+                  <div style={{ height: '200px', overflow: 'hidden', background: '#f0f0f0' }}>
+                    <img
+                      src={categoryImages[cat.slug]}
+                      alt={cat.label}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  </div>
+                  <div style={{ padding: '20px 20px 22px' }}>
+                    <div style={{ color: '#111111', fontWeight: 700, fontSize: '1rem', marginBottom: '6px' }}>{cat.label}</div>
+                    <div style={{ color: '#777', fontSize: '0.82rem', lineHeight: 1.5, marginBottom: '12px' }}>{cat.description}</div>
+                    <div style={{ color: '#FF6B00', fontSize: '0.8rem', fontWeight: 600 }}>{count} productos →</div>
+                  </div>
                 </Link>
               );
             })}
