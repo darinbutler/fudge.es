@@ -52,7 +52,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <img
               src={product.image}
               alt={product.nameEs}
-              style={{ width: '100%', aspectRatio: '1', objectFit: 'cover', display: 'block' }}
+              style={{ width: '100%', aspectRatio: '1', objectFit: 'contain', display: 'block', padding: '16px' }}
             />
             {product.badge && (
               <div style={{
@@ -165,7 +165,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     overflow: 'hidden',
                     transition: 'box-shadow 0.2s',
                   }}>
-                    <img src={p.image} alt={p.nameEs} style={{ width: '100%', height: '180px', objectFit: 'cover', background: '#f7f7f7' }} />
+                    <img src={p.image} alt={p.nameEs} style={{ width: '100%', height: '180px', objectFit: 'contain', background: '#f7f7f7', padding: '10px' }} />
                     <div style={{ padding: '14px' }}>
                       <div style={{ color: '#111', fontWeight: 700, fontSize: '0.9rem', marginBottom: '4px' }}>{p.nameEs}</div>
                       <div style={{ color: '#f59e0b', fontSize: '0.78rem', marginBottom: '8px' }}>★★★★★</div>

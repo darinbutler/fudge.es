@@ -118,7 +118,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                   <img
                     src={product.image}
                     alt={product.nameEs}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '12px' }}
                   />
                   {product.badge && (
                     <div style={{

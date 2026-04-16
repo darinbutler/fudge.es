@@ -147,11 +147,11 @@ export default function Home() {
             >
               <div className="product-card">
                 {/* Product image area — light grey bg like UK site */}
-                <div style={{ position: 'relative', height: '280px', overflow: 'hidden', background: '#f7f7f7' }}>
+                <div style={{ position: 'relative', height: '280px', overflow: 'hidden', background: '#f7f7f7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img
                     src={product.image}
                     alt={product.nameEs}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '12px' }}
                   />
                   {product.badge && (
                     <div style={{
