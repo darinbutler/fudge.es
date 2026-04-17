@@ -55,11 +55,11 @@ export default function RootLayout({
             {/* Footer logo */}
             <div style={{ marginBottom: '40px', paddingBottom: '36px', borderBottom: '1px solid #222' }}>
               <img
-                src="/fudge-logo.svg"
+                src="/fudge-logo-white.svg"
                 alt="Fudge Professional"
                 width="180"
                 height="40"
-                style={{ height: '40px', width: 'auto', filter: 'invert(1)', opacity: 0.9 }}
+                style={{ height: '40px', width: 'auto' }}
               />
             </div>
             <div style={{

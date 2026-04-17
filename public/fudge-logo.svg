@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="320" height="90" role="img" aria-label="Fudge Professional">
+  <!-- FUDGE wordmark -->
+  <text
+    x="0"
+    y="62"
+    font-family="'Arial Black', 'Arial Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="62"
+    font-weight="900"
+    fill="#111111"
+    letter-spacing="-1"
+  >FUDGE</text>
+
+  <!-- Orange F badge (speech-bubble shape) -->
+  <!-- Main rounded rectangle -->
+  <rect x="222" y="4" width="62" height="58" rx="8" ry="8" fill="#FF6B00"/>
+  <!-- Speech bubble pointer at bottom-right -->
+  <polygon points="268,62 284,62 284,76" fill="#FF6B00"/>
+  <!-- White F lettermark -->
+  <text
+    x="235"
+    y="50"
+    font-family="'Arial Black', 'Arial Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="42"
+    font-weight="900"
+    fill="#ffffff"
+  >F</text>
+
+  <!-- PROFESSIONAL label -->
+  <text
+    x="1"
+    y="84"
+    font-family="'Arial', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="18"
+    font-weight="700"
+    fill="#FF6B00"
+    letter-spacing="3"
+  >PROFESSIONAL</text>
+</svg>
