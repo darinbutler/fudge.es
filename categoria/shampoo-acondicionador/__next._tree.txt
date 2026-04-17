@@ -1,0 +1,9 @@
+:HL["/_next/static/chunks/0chad6vr87a39.css","style"]
+:HL["/fudge-logo-white.svg","image"]
+:HL["https://uk.fudgeprofessional.com/wp-content/uploads/2022/04/0-33-600x600.jpg","image"]
+:HL["https://uk.fudgeprofessional.com/wp-content/uploads/2022/04/0-18-600x600.jpg","image"]
+:HL["https://uk.fudgeprofessional.com/wp-content/uploads/2022/04/0-13-600x600.jpg","image"]
+:HL["https://uk.fudgeprofessional.com/wp-content/uploads/2022/04/0-15-600x600.jpg","image"]
+:HL["https://uk.fudgeprofessional.com/wp-content/uploads/2022/04/0-20-600x600.jpg","image"]
+:HL["https://uk.fudgeprofessional.com/wp-content/uploads/2022/04/0-22-600x600.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"categoria","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"shampoo-acondicionador","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"WSdl5Ovx1POQMmmsRUicn"}
